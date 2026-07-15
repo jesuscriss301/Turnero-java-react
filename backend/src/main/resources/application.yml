@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/turnero?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USER:turnero}
+    password: ${DB_PASSWORD:turnero}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET:change-me-to-a-long-random-secret-of-at-least-64-characters-please!!}
+    expiration-minutes: ${APP_JWT_MINUTES:480}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
