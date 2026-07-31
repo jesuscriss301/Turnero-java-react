@@ -13,6 +13,7 @@ public class Ticket {
   private Long pointId;
   private String code;
   private String status = "WAITING";
+  @Column(columnDefinition = "TINYINT")
   private int priority;
   private String publicToken;
   private String visitorName;
